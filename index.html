@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandhya Makeup Studio LLC</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#faf8f5] text-[#2c2623]">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-md border-b border-[#ebdcd0]">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="serif text-xl font-bold tracking-wide text-[#5c4738]">SANDHYA MAKEUP STUDIO</h1>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase text-[#7c6453]">
+                <a href="#about" class="hover:text-[#5c4738] transition">About</a>
+                <a href="#services" class="hover:text-[#5c4738] transition">Services</a>
+                <a href="#portfolio" class="hover:text-[#5c4738] transition">Portfolio</a>
+                <a href="#contact" class="hover:text-[#5c4738] transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-[#5c4738] text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-[#463529] transition">Book Session</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#a88970] block mb-3">Professional Bridal & Editorial Makeup</span>
+            <h2 class="serif text-4xl md:text-6xl font-normal leading-tight text-[#3a2e26] mb-6">Enhancing your natural radiance for your finest moments.</h2>
+            <p class="text-[#615146] leading-relaxed mb-8 max-w-md">Sandhya Makeup Studio LLC specializes in timeless luxury bridal styling, rich traditional aesthetics, and high-fashion editorial makeovers customized to perfection.</p>
+            <div class="flex space-x-4">
+                <a href="#contact" class="bg-[#5c4738] text-white px-6 py-3 rounded-full font-medium shadow-sm hover:bg-[#463529] transition">Inquire Now</a>
+                <a href="#portfolio" class="border border-[#7c6453] text-[#7c6453] px-6 py-3 rounded-full font-medium hover:bg-[#7c6453]/5 transition">View Gallery</a>
+            </div>
+        </div>
+        <div class="relative aspect-4/5 bg-[#ebdcd0] rounded-2xl overflow-hidden shadow-xl">
+            <!-- Placeholder for your main feature image -->
+            <div class="absolute inset-0 flex items-center justify-center text-[#7c6453] font-medium italic">Beautiful Bridal Portrait Placeholder</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-[#f2ede7] py-20 border-y border-[#ebdcd0]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#a88970] block mb-3">Meet Sandhya</span>
+            <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-6">Artistry Rooted in Passion & Elite Training</h3>
+            <p class="text-[#615146] leading-relaxed max-w-2xl mx-auto mb-6">With extensive background training in advanced cosmetics and styling, Sandhya crafts personalized visual narratives through makeup. Specializing in flawless skin finishes, beautiful vintage styling, and striking traditional transformations.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h3 class="serif text-3xl md:text-4xl text-[#3a2e26]">Studio Offerings</h3>
+            <p class="text-[#7c6453] mt-2">Elite services engineered for absolute perfection</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-xs border border-[#ebdcd0]">
+                <h4 class="serif text-xl font-semibold mb-3 text-[#3a2e26]">Luxury Bridal</h4>
+                <p class="text-sm text-[#615146] leading-relaxed">Comprehensive wedding day styling including high-definition cosmetics, traditional drape setting, and long-wear skin prep.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xs border border-[#ebdcd0]">
+                <h4 class="serif text-xl font-semibold mb-3 text-[#3a2e26]">Editorial & Glamour</h4>
+                <p class="text-sm text-[#615146] leading-relaxed">Bold, expressive makeovers calibrated flawlessly for photographic sets, events, and retro portrait aesthetics.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xs border border-[#ebdcd0]">
+                <h4 class="serif text-xl font-semibold mb-3 text-[#3a2e26]">Masterclasses</h4>
+                <p class="text-sm text-[#615146] leading-relaxed">One-on-one personalized makeup education focusing on product theory, blending techniques, and mastering your own look.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram / Portfolio Embed Section -->
+    <section id="portfolio" class="bg-[#f2ede7] py-20 border-t border-[#ebdcd0]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-4">On the Gram</h3>
+            <p class="text-[#7c6453] mb-12">Follow the journey and recent look transformations @sassygirlbysandhya</p>
+            
+            <!-- INSTAGRAM WIDGET BOX -->
+            <div class="bg-white border border-[#ebdcd0] rounded-2xl p-8 min-h-[300px] flex items-center justify-center">
+                <p class="text-sm text-gray-400 italic">[ Paste your Instagram Widget Code or Embed Script Here ]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-20 text-center">
+        <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-4">Let's Create Magic</h3>
+        <p class="text-[#615146] mb-8">Now booking dates for the upcoming season. Drop your details below to secure your consultation.</p>
+        
+        <form class="grid md:grid-cols-2 gap-4 text-left max-w-xl mx-auto">
+            <input type="text" placeholder="Your Name" class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738]">
+            <input type="email" placeholder="Email Address" class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738]">
+            <select class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738] md:col-span-2">
+                <option>Select Service</option>
+                <option>Bridal Makeup</option>
+                <option>Editorial / Retro Glamour</option>
+                <option>1-on-1 Masterclass</option>
+            </select>
+            <textarea placeholder="Tell us about your event date and vision..." rows="4" class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738] md:col-span-2"></textarea>
+            <button type="submit" class="bg-[#5c4738] text-white p-3 rounded-lg text-sm font-semibold tracking-wide hover:bg-[#463529] transition md:col-span-2">Send Inquiry</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#3a2e26] text-[#ebdcd0] text-sm py-8 text-center border-t border-[#2c2623]">
+        <p>© 2026 Sandhya Makeup Studio LLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
