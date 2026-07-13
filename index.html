@@ -114,29 +114,48 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="max-w-4xl mx-auto px-6 py-20 text-center">
         <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-4">Let's Create Magic</h3>
         <p class="text-[#615146] mb-8">Now booking dates for the upcoming season. Drop your details below to secure your consultation.</p>
         
-        <form class="grid md:grid-cols-2 gap-4 text-left max-w-xl mx-auto">
-            <input type="text" placeholder="Your Name" class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738]">
-            <input type="email" placeholder="Email Address" class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738]">
-            <select class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738] md:col-span-2">
-                <option>Select Service</option>
-                <option>Bridal Makeup</option>
-                <option>Editorial / Retro Glamour</option>
-                <option>1-on-1 Masterclass</option>
-            </select>
-            <textarea placeholder="Tell us about your event date and vision..." rows="4" class="bg-white border border-[#ebdcd0] rounded-lg p-3 text-sm focus:outline-none focus:border-[#5c4738] md:col-span-2"></textarea>
-            <button type="submit" class="bg-[#5c4738] text-white p-3 rounded-lg text-sm font-semibold tracking-wide hover:bg-[#463529] transition md:col-span-2">Send Inquiry</button>
-        </form>
+            <form action="https://api.web3forms.com/submit" method="POST" class="mt-8 space-y-6">
+    <!-- Web3Forms Access Key Integration -->
+    <input type="hidden" name="access_key" value="9440dadb-f048-4b07-b95e-5ed35a73ae25">
+    
+    <!-- Optional: Redirects back to your home page after submission -->
+    <input type="hidden" name="redirect" value="https://sassygirlbysandhya.com">
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Your Name" required 
+               class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26]">
+        
+        <input type="email" name="email" placeholder="Email Address" required 
+               class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26]">
+    </div>
+
+    <select name="service" required 
+            class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26]">
+        <option value="" disabled selected>Select Service</option>
+        <option value="Luxury Bridal">Luxury Bridal</option>
+        <option value="Editorial & Glamour">Editorial & Glamour</option>
+        <option value="Masterclasses">Masterclasses</option>
+    </select>
+
+    <textarea name="message" rows="4" placeholder="Tell us about your event date and vision..." required 
+              class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26] resize-none"></textarea>
+
+    <button type="submit" 
+            class="w-full bg-[#5a483a] hover:bg-[#3a2e26] text-white font-semibold py-4 rounded-xl transition shadow-md">
+        Send Inquiry
+    </button>
+</form>
     </section>
 
     <!-- Footer -->
     <footer class="bg-[#3a2e26] text-[#ebdcd0] text-sm py-8 text-center border-t border-[#2c2623]">
-        <p>© 2026 Sandhya Makeup Studio LLC. All rights reserved.</p>
+        <p>© 2026 Sandhyas Makeup Studio LLC. All rights reserved.</p>
     </footer>
 
 </body>
