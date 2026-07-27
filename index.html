@@ -1,168 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandhya Makeup Studio LLC</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandhya Makeup Studio LLC | Luxury Bridal & Editorial Makeup</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Elfsight Instagram Feed Script -->
+<script src="https://static.elfsight.com/platform/platform.js" defer></script>
+
+  <style>
+    /* Global Reset & Base Styles */
+    :root {
+      --bg-color: #fcf9f6;
+      --card-bg: #ffffff;
+      --text-dark: #2a2523;
+      --text-muted: #665f5b;
+      --accent: #5c4033;
+      --accent-hover: #432e24;
+      --border-color: #ebe5df;
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius-lg: 16px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--text-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--text-dark);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: rgba(252, 249, 246, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+      padding: 18px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 40px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 540px;
+    }
+
+    .hero-subtitle {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-description {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Hero Carousel */
+    .hero-carousel-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .carousel-btn.prev { left: 16px; }
+    .carousel-btn.next { right: 16px; }
+
+    /* Full Collage Banner Section */
+    .banner-section {
+      padding: 20px 0 60px 0;
+    }
+
+    .full-banner-card {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+    }
+
+    .full-banner-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* Displays full image without cropping */
+    }
+
+    /* About Section */
+    .about {
+      padding: 100px 0;
+      background-color: #f7f2ed;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .about-content {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 24px;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 100px 0;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    /* Dynamic Local Gallery Grid */
+    .local-gallery-section {
+      padding: 60px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Social / Instagram Section */
+    .social-section {
+      padding: 100px 0;
+      background-color: #f7f2ed;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .social-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .instagram-wrapper {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      min-height: 400px; /* Prevents feed container from collapsing */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 100px 0;
+    }
+
+    .contact-container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+      background-color: var(--bg-color);
+      transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
-<body class="bg-[#faf8f5] text-[#2c2623]">
+<body>
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-md border-b border-[#ebdcd0]">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="serif text-xl font-bold tracking-wide text-[#5c4738]">SANDHYA MAKEUP STUDIO</h1>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase text-[#7c6453]">
-                <a href="#about" class="hover:text-[#5c4738] transition">About</a>
-                <a href="#services" class="hover:text-[#5c4738] transition">Services</a>
-                <a href="#portfolio" class="hover:text-[#5c4738] transition">Portfolio</a>
-                <a href="#contact" class="hover:text-[#5c4738] transition">Contact</a>
-            </nav>
-            <a href="#contact" class="bg-[#5c4738] text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-[#463529] transition">Book Session</a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-[#a88970] block mb-3">Professional Bridal & Editorial Makeup</span>
-            <h2 class="serif text-4xl md:text-6xl font-normal leading-tight text-[#3a2e26] mb-6">Enhancing your natural radiance for your finest moments.</h2>
-            <p class="text-[#615146] leading-relaxed mb-8 max-w-md">Sandhya Makeup Studio LLC specializes in timeless luxury bridal styling, rich traditional aesthetics, and high-fashion editorial makeovers customized to perfection.</p>
-            <div class="flex space-x-4">
-                <a href="#contact" class="bg-[#5c4738] text-white px-6 py-3 rounded-full font-medium shadow-sm hover:bg-[#463529] transition">Inquire Now</a>
-                <a href="#portfolio" class="border border-[#7c6453] text-[#7c6453] px-6 py-3 rounded-full font-medium hover:bg-[#7c6453]/5 transition">View Gallery</a>
-            </div>
-        </div>
-        <div class="relative aspect-4/5 bg-[#ebdcd0] rounded-2xl overflow-hidden shadow-xl">
-            <!-- Placeholder for your main feature image -->
-            <div class="hero-image-container flex justify-center items-center">
-  <img 
-    src="sassygirlbysandhya_frontpage.png" 
-    alt="Sandhya Makeup Studio Portfolio Collage" 
-    class="w-full max-w-[550px] h-auto rounded-2xl shadow-lg object-cover"
-  >
-</div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="bg-[#f2ede7] py-20 border-y border-[#ebdcd0]">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <span class="text-xs font-bold uppercase tracking-widest text-[#a88970] block mb-3">Meet Sandhya</span>
-            <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-6">Artistry Rooted in Passion & Elite Training</h3>
-            <p class="text-[#615146] leading-relaxed max-w-2xl mx-auto mb-6">With extensive background training in advanced cosmetics and styling, Sandhya crafts personalized visual narratives through makeup. Specializing in flawless skin finishes, beautiful vintage styling, and striking traditional transformations.</p>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="max-w-6xl mx-auto px-6 py-20">
-        <div class="text-center mb-16">
-            <h3 class="serif text-3xl md:text-4xl text-[#3a2e26]">Studio Offerings</h3>
-            <p class="text-[#7c6453] mt-2">Elite services engineered for absolute perfection</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-xs border border-[#ebdcd0]">
-                <h4 class="serif text-xl font-semibold mb-3 text-[#3a2e26]">Luxury Bridal</h4>
-                <p class="text-sm text-[#615146] leading-relaxed">Comprehensive wedding day styling including high-definition cosmetics, traditional drape setting, and long-wear skin prep.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-xs border border-[#ebdcd0]">
-                <h4 class="serif text-xl font-semibold mb-3 text-[#3a2e26]">Editorial & Glamour</h4>
-                <p class="text-sm text-[#615146] leading-relaxed">Bold, expressive makeovers calibrated flawlessly for photographic sets, events, and retro portrait aesthetics.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-xs border border-[#ebdcd0]">
-                <h4 class="serif text-xl font-semibold mb-3 text-[#3a2e26]">Masterclasses</h4>
-                <p class="text-sm text-[#615146] leading-relaxed">One-on-one personalized makeup education focusing on product theory, blending techniques, and mastering your own look.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram & Facebook / Portfolio Section -->
-    <section id="portfolio" class="bg-[#f2ede7] py-20 border-t border-[#ebdcd0]">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-4">Connect With Me</h3>
-            <p class="text-[#7c6453] mb-12">Follow the journey, watch behind-the-scenes transformations, and view recent updates.</p>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <!-- Instagram Button -->
-                <a href="https://instagram.com/sassygirlbysandhya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:opacity-90 transition">
-                    <span>Follow @sassygirlbysandhya on Instagram</span>
-                </a>
-                <!-- Facebook Button -->
-                <a href="https://www.facebook.com/sassygirlbysandhya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-[#1877f2] text-white px-6 py-3 rounded-full font-semibold shadow-sm hover:bg-[#166fe5] transition">
-                    <span>Like on Facebook</span>
-                </a>
-            </div>
-
-            <!-- LIVE SOCIAL FEEDS GRID -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Instagram Feed Container -->
-                <div class="bg-white border border-[#ebdcd0] rounded-2xl p-6 min-h-[400px]">
-                    <h4 class="serif text-xl text-[#3a2e26] mb-4 font-medium">Instagram Gallery</h4>
-                    <script src="https://elfsightcdn.com/platform.js" async></script>
-                    <div class="elfsight-app-85ed596a-c17b-4745-8a0d-0ff245162fe2" data-elfsight-app-lazy></div>
-                </div>
-
-                <!-- Facebook Feed Container -->
-                <div class="bg-white border border-[#ebdcd0] rounded-2xl p-6 min-h-[400px]">
-                    <h4 class="serif text-xl text-[#3a2e26] mb-4 font-medium">Facebook Updates</h4>
-                    <script src="https://elfsightcdn.com/platform.js" async></script>
-                    <div class="elfsight-app-850ea3f8-7d43-4a86-acb1-65ef6c4b8f69" data-elfsight-app-lazy></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h3 class="serif text-3xl md:text-4xl text-[#3a2e26] mb-4">Let's Create Magic</h3>
-        <p class="text-[#615146] mb-8">Now booking dates for the upcoming season. Drop your details below to secure your consultation.</p>
-        
-            <form action="https://api.web3forms.com/submit" method="POST" class="mt-8 space-y-6">
-    <!-- Web3Forms Access Key Integration -->
-    <input type="hidden" name="access_key" value="9440dadb-f048-4b07-b95e-5ed35a73ae25">
-    
-    <!-- Optional: Redirects back to your home page after submission -->
-    <input type="hidden" name="redirect" value="https://sassygirlbysandhya.com">
-
-    <div class="grid md:grid-cols-2 gap-6">
-        <input type="text" name="name" placeholder="Your Name" required 
-               class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26]">
-        
-        <input type="email" name="email" placeholder="Email Address" required 
-               class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26]">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Sandhya Makeup Studio</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Book Session</a>
     </div>
+  </nav>
 
-    <select name="service" required 
-            class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26]">
-        <option value="" disabled selected>Select Service</option>
-        <option value="Luxury Bridal">Luxury Bridal</option>
-        <option value="Editorial & Glamour">Editorial & Glamour</option>
-        <option value="Masterclasses">Masterclasses</option>
-    </select>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-subtitle">Professional Bridal & Editorial Makeup</div>
+        <h1 class="hero-title">Enhancing your natural radiance for your finest moments.</h1>
+        <p class="hero-description">
+          Sandhya Makeup Studio LLC specializes in timeless luxury bridal styling, rich traditional aesthetics, and high-fashion editorial makeovers customized to perfection.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Inquire Now</a>
+          <a href="#portfolio" class="btn btn-secondary">View Gallery</a>
+        </div>
+      </div>
+      
+      <!-- Dynamic Hero Carousel -->
+      <div class="hero-carousel-container" id="hero-carousel">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </section>
 
-    <textarea name="message" rows="4" placeholder="Tell us about your event date and vision..." required 
-              class="w-full px-4 py-3 rounded-xl border border-[#ebdcd0] focus:outline-none focus:border-[#3a2e26] transition bg-white text-[#3a2e26] resize-none"></textarea>
+  <!-- Full Front Page Collage Showcase -->
+  <section class="banner-section">
+    <div class="container">
+      <div class="full-banner-card">
+        <img src="images/sassygirlbysandhya_frontpage.png" alt="Sandhya Makeup Studio Full Collage Showcase" />
+      </div>
+    </div>
+  </section>
 
-    <button type="submit" 
-            class="w-full bg-[#5a483a] hover:bg-[#3a2e26] text-white font-semibold py-4 rounded-xl transition shadow-md">
-        Send Inquiry
-    </button>
-</form>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-content">
+      <div class="section-subtitle">Meet Sandhya</div>
+      <h2 class="section-title">Artistry Rooted in Passion & Elite Training</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        With extensive background training in advanced cosmetics and styling, Sandhya crafts personalized visual narratives through makeup. Specializing in flawless skin finishes, beautiful vintage styling, and striking traditional transformations tailored to celebrate every individual's unique charm.
+      </p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#3a2e26] text-[#ebdcd0] text-sm py-8 text-center border-t border-[#2c2623]">
-        <p>© 2026 Sandhyas Makeup Studio LLC. All rights reserved.</p>
-    </footer>
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-subtitle">Studio Offerings</div>
+        <h2 class="section-title">Services Engineered for Absolute Perfection</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3 class="service-title">Luxury Bridal</h3>
+          <p style="color: var(--text-muted);">
+            Comprehensive wedding day styling including high-definition cosmetics, traditional drape setting, and long-wear skin prep tailored to shine in person and on camera.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Editorial & Glamour</h3>
+          <p style="color: var(--text-muted);">
+            Bold, expressive makeovers calibrated flawlessly for photographic sets, special events, retro portrait aesthetics, and high-fashion concepts.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Masterclasses</h3>
+          <p style="color: var(--text-muted);">
+            One-on-one personalized makeup education focusing on product theory, blending techniques, and mastering application for your everyday or evening looks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="local-gallery-section">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-subtitle">Portfolio & Transformations</div>
+        <h2 class="section-title">Studio Work & Recent Clients</h2>
+      </div>
+      <div class="gallery-grid" id="folder-gallery"></div>
+    </div>
+  </section>
+
+  <!-- Social Section (Instagram Widget) -->
+  <section class="social-section">
+    <div class="container">
+      <div class="social-header">
+        <div class="section-subtitle">Connect With Me</div>
+        <h2 class="section-title">Follow @sassygirlbysandhya</h2>
+        <p style="color: var(--text-muted);">Follow along for recent transformations, behind-the-scenes glimpses, and styling updates.</p>
+      </div>
+      <div class="instagram-wrapper">
+        <!-- Elfsight Platform Script -->
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <!-- Elfsight App Container -->
+        <div class="elfsight-app-b9ad8218-bd76-4d22-b5e5-ca03ea406201" data-elfsight-app-lazy></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-container">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h2 class="section-title">Let's Create Magic</h2>
+          <p style="color: var(--text-muted);">Now booking dates for the upcoming season. Drop your details below to secure your consultation.</p>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Select Service</label>
+            <select id="service" class="form-control" required>
+              <option value="">Select a service...</option>
+              <option value="bridal">Luxury Bridal</option>
+              <option value="editorial">Editorial & Glamour</option>
+              <option value="masterclass">Masterclasses</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Event Details & Vision</label>
+            <textarea id="message" class="form-control" placeholder="Include your date, location, and stylistic preferences..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Sandhya Makeup Studio LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Dynamic Gallery & Carousel Script -->
+  <script>
+    const imageFiles = [
+      //  "sassygirlbysandhya_frontpage.jpg",
+      "583F7622-F62F-4BB4-814B-491E52F94EB8.JPG",
+      "b1e14f69-94f5-4d1c-83c3-829d268e6071.jpg",
+      "DBCF3CA6-3409-496C-AB7F-D245D8E71739.JPG",
+      "IMG_0257.jpeg",
+      "IMG_0260.jpg",
+      "IMG_0303.jpg",
+      "IMG_0458.jpg",
+      "IMG_0552.jpeg",
+      "IMG_0602.jpeg",
+      "IMG_7060.jpg"
+    ];
+
+    const folderPath = "images/";
+
+    // 1. Render Hero Carousel
+    const carouselContainer = document.getElementById("hero-carousel");
+    imageFiles.forEach((file, index) => {
+      const slide = document.createElement("div");
+      slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
+      slide.innerHTML = `<img src="${folderPath}${file}" alt="Sandhya Makeup Studio Look">`;
+      carouselContainer.appendChild(slide);
+    });
+
+    let currentSlide = 0;
+    function showSlide(index) {
+      const slides = document.querySelectorAll(".carousel-slide");
+      slides.forEach((s) => s.classList.remove("active"));
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }
+
+    function moveSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    setInterval(() => {
+      moveSlide(1);
+    }, 5000);
+
+    // 2. Render Portfolio Gallery Grid
+    const galleryGrid = document.getElementById("folder-gallery");
+    imageFiles.forEach((file) => {
+      const item = document.createElement("div");
+      item.className = "gallery-item";
+      item.innerHTML = `<img src="${folderPath}${file}" alt="Makeup Transformation">`;
+      galleryGrid.appendChild(item);
+    });
+    // Force Elfsight widget initialization
+    window.addEventListener('load', function() {
+      if (window.ElfsightApp) {
+        window.ElfsightApp.init();
+      }
+    });
+  </script>
 </body>
 </html>
